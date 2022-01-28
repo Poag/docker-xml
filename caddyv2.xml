@@ -16,7 +16,7 @@
     [b][span style='color: #E80000;']Notes[/span][/b][br]&#xD;
     Configure your Caddyfile using https://caddyserver.com/ and https://caddyserver.com/docs/caddyfile &#xD;																																											 
   </Overview>
-  <Category>Network:Web, Network:Proxy:</Category>
+  <Category>Network:Web Network:Proxy:</Category>
   <WebUI/>
   <TemplateURL/>
   <Icon>https://d1q6f0aelx0por.cloudfront.net/product-logos/library-caddy-logo.png</Icon>
@@ -34,7 +34,6 @@
   </Description>
   <DonateText/>
   <DonateLink/>
-  <Description/>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
