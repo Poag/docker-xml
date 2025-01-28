@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Declutarr</Name>
+  <Repository>ghcr.io/manimatter/decluttarr:latest</Repository>
+  <Registry>ghcr.io/manimatter/decluttarr</Registry>
+  <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+  </Branch>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/ManiMatter/decluttarr/issues</Support>
+  <Project>https://github.com/ManiMatter/decluttarr</Project>
+  <Overview>An implementation of declutarr setup for usenet.&#xD;
+Bittorrent keys will need to be added, check https://github.com/ManiMatter/decluttarr for more information.</Overview>
+  <Category>Tools: Other:</Category> 
+  <ExtraSearchTerms>Sonarr Radarr Lidarr Whisparr Download Cleanup</ExtraSearchTerms>
+  <WebUI>https://github.com/ManiMatter/decluttarr</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/decluttarr.xml</TemplateURL>
+  <Icon/>
+  <Requires/>
+  <Config Name="TEST_RUN" Target="TEST_RUN" Default="True" Mode="" Description="Enable or Disable Test Run." Type="Variable" Display="always" Required="false" Mask="false">False</Config>
+  <Config Name="REMOVE_TIMER" Target="REMOVE_TIMER" Default="" Mode="" Description="Cleanup check timer in minutes" Type="Variable" Display="always" Required="false" Mask="false">10</Config>
+  <Config Name="REMOVE_FAILED" Target="REMOVE_FAILED" Default="" Mode="" Description="Remove failed downlaods" Type="Variable" Display="always" Required="false" Mask="false">True</Config>
+  <Config Name="REMOVE_FAILED_IMPORTS" Target="REMOVE_FAILED_IMPORTS" Default="True" Mode="" Description="Remove failed imports" Type="Variable" Display="always" Required="false" Mask="false">True</Config>
+  <Config Name="REMOVE_UNMONITORED" Target="REMOVE_UNMONITORED" Default="" Mode="" Description="Remove downloads for unmonitored items" Type="Variable" Display="always" Required="false" Mask="false">True</Config>
+  <Config Name="REMOVE_ORPHANS" Target="REMOVE_ORPHANS" Default="" Mode="" Description="Orphan downloads are those that do not belong to any requested media anymore" Type="Variable" Display="always" Required="false" Mask="false">True</Config>
+  <Config Name="RADARR_URL" Target="RADARR_URL" Default="http://:7878/radarr/" Mode="" Description="Url to radarr" Type="Variable" Display="always" Required="false" Mask="false">http://172.17.0.1:7878/radarr/</Config>
+  <Config Name="RADARR_KEY" Target="RADARR_KEY" Default="" Mode="" Description="Radarr API key" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="SONARR_URL" Target="SONARR_URL" Default="http://:6781/sonarr/" Mode="" Description="Url to Sonarr" Type="Variable" Display="always" Required="false" Mask="false">http://172.17.0.1:6781/sonarr/</Config>
+  <Config Name="SONARR_KEY" Target="SONARR_KEY" Default="" Mode="" Description="Sonarr PI Key" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
+  <Config Name="SSL_VERIFICATION" Target="SSL_VERIFICATION" Default="" Mode="" Description="Enable/Disable SSL verification" Type="Variable" Display="advanced" Required="false" Mask="false">False</Config>
+  <Config Name="LOG_LEVEL" Target="LOG_LEVEL" Default="INFO" Mode="" Description="Logging Level" Type="Variable" Display="advanced" Required="false" Mask="false">INFO</Config>
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="TimeZone" Type="Variable" Display="advanced" Required="false" Mask="false">Europe/London</Config>
+  <TailscaleStateDir/>
+</Container>
