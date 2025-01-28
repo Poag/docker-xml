@@ -15,7 +15,6 @@
 Bittorrent keys will need to be added, check https://github.com/ManiMatter/decluttarr for more information.</Overview>
   <Category>Tools: Other:</Category> 
   <ExtraSearchTerms>Sonarr Radarr Lidarr Whisparr Download Cleanup</ExtraSearchTerms>
-  <WebUI>https://github.com/ManiMatter/decluttarr</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/decluttarr.xml</TemplateURL>
   <Icon/>
   <Requires/>
