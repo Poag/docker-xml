@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>Declutarr</Name>
+  <Name>Decluttarr</Name>
   <Repository>ghcr.io/manimatter/decluttarr:latest</Repository>
   <Registry>ghcr.io/manimatter/decluttarr</Registry>
   <Branch>
