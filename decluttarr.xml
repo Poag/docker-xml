@@ -27,7 +27,16 @@ Bittorrent keys will need to be added, check https://github.com/ManiMatter/declu
   <Config Name="RADARR_URL" Target="RADARR_URL" Default="http://:7878/radarr/" Mode="" Description="Url to radarr" Type="Variable" Display="always" Required="false" Mask="false">http://172.17.0.1:7878/radarr/</Config>
   <Config Name="RADARR_KEY" Target="RADARR_KEY" Default="" Mode="" Description="Radarr API key" Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="SONARR_URL" Target="SONARR_URL" Default="http://:6781/sonarr/" Mode="" Description="Url to Sonarr" Type="Variable" Display="always" Required="false" Mask="false">http://172.17.0.1:6781/sonarr/</Config>
-  <Config Name="SONARR_KEY" Target="SONARR_KEY" Default="" Mode="" Description="Sonarr PI Key" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="SONARR_KEY" Target="SONARR_KEY" Default="" Mode="" Description="Sonarr API Key" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="LIDARR_URL" Target="LIDARR_URL" Default="" Mode="" Description="Url to Lidarr" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="LIDARR_KEY" Target="LIDARR_KEY" Default="" Mode="" Description="Lidarr API Key" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="READARR_URL" Target="READARR_URL" Default="" Mode="" Description="Url to Readarr" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="READARR_KEY" Target="READARR_KEY" Default="" Mode="" Description="Readarr API Key" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="WHISPARR_URL" Target="WHISPARR_URL" Default="" Mode="" Description="Url to Whisparr" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="WHISPARR_KEY" Target="WHISPARR_KEY" Default="" Mode="" Description="Whisparr API Key" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="QBITTORRENT_URL" Target="QBITTORRENT_URL" Default="" Mode="" Description="Url to QBitTorrent" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="QBITTORRENT_USERNAME" Target="QBITTORRENT_USERNAME" Default="" Mode="" Description="QBit Username" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="QBITTORRENT_PASSWORD" Target="QBITTORRENT_PASSWORD" Default="" Mode="" Description="QBit Password" Type="Variable" Display="always" Required="false" Mask="false"></Config>     
   <Config Name="PUID" Target="PUID" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
   <Config Name="PGID" Target="PGID" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
   <Config Name="SSL_VERIFICATION" Target="SSL_VERIFICATION" Default="" Mode="" Description="Enable/Disable SSL verification" Type="Variable" Display="advanced" Required="false" Mask="false">False</Config>
