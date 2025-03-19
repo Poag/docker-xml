@@ -16,7 +16,7 @@ Bittorrent keys will need to be added, check https://github.com/ManiMatter/declu
   <Category>Tools: Other:</Category> 
   <ExtraSearchTerms>Sonarr Radarr Lidarr Whisparr Download Cleanup</ExtraSearchTerms>
   <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/decluttarr.xml</TemplateURL>
-  <Icon/>
+  <Icon>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/images/Decluttarr.png</Icon>
   <Requires/>
   <Config Name="TEST_RUN" Target="TEST_RUN" Default="True" Mode="" Description="Enable or Disable Test Run." Type="Variable" Display="always" Required="false" Mask="false">False</Config>
   <Config Name="REMOVE_TIMER" Target="REMOVE_TIMER" Default="" Mode="" Description="Cleanup check timer in minutes" Type="Variable" Display="always" Required="false" Mask="false">10</Config>
