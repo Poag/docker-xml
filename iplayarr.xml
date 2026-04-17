@@ -3,6 +3,15 @@
   <Name>iPlayarr</Name>
   <Repository>nikorag/iplayarr:latest</Repository>
   <Registry/>
+  <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+  </Branch>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Nikorag/iplayarr/issues</Support>
+  <Project>https://github.com/Nikorag/iplayarr</Project>
+  <Overview>iPlayarr is a companion tool for Sonarr and Radarr, making it easy to integrate get_iplayer for searching and downloading iPlayer content directly. It acts as both an indexer and a download client, allowing seamless automation of TV and movie downloads.</Overview>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
