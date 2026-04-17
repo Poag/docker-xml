@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>unmonitarr</Name>
+  <Repository>ghcr.io/unmonitarr/unmonitarr:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/unmonitarr/unmonitarr/issues</Support>  
+  <Project>https://github.com/unmonitarr/unmonitarr</Project>
+  <ReadMe/>
+  <Overview>When monitoring upcoming content, Sonarr and Radarr can search for and download releases before they're actually available, leading to fake pre-release files.</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:5099]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/unmonitarr/unmonitarr/main/assets/unmonitarr-logo.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1776412396</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebUI" Target="5099" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">5099</Config>
+  <Config Name="ENABLE_RADARR" Target="ENABLE_RADARR" Default="0" Mode="" Description="Enable Radarr" Type="Variable" Display="always" Required="false" Mask="false">1</Config>
+  <Config Name="RADARR_URL" Target="RADARR_URL" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">http://127.0.0.1:7878/</Config>
+  <Config Name="RADARR_API_KEY" Target="RADARR_API_KEY" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="true">apikey</Config>
+  <Config Name="Radarr Preferred Release Type" Target="PREFERRED_RELEASE" Default="either" Mode="" Description="either, digital, or physical" Type="Variable" Display="always" Required="false" Mask="false">either</Config>
+  <Config Name="Ignore in Cinema" Target="IGNORE_INCINEMAS" Default="1" Mode="" Description="Ignore cinema release dates (1=yes, 0=no)" Type="Variable" Display="always" Required="false" Mask="false">1</Config>
+  <Config Name="Enable Sonarr" Target="ENABLE_SONARR" Default="0" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">1</Config>
+  <Config Name="Sonarr URL" Target="SONARR_URL" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">http://127.0.0.1:6782/</Config>
+  <Config Name="SONARR_API_KEY" Target="SONARR_API_KEY" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="true">apikey</Config>
+  <Config Name="Auto Tag Name" Target="AUTO_TAG_NAME" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">auto-unmonitored</Config>
+  <Config Name="IGNORE_TAG_NAME" Target="IGNORE_TAG_NAME" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">ignoreairdate</Config>
+  <Config Name="Skip if already added" Target="SKIP_IF_FILE" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">1</Config>
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">Europe/London</Config>
+  <Config Name="DRY_RUN" Target="DRY_RUN" Default="1" Mode="" Description="Preview mode: 1 = log only, 0 = apply changes" Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
+  <TailscaleStateDir/>
+</Container>
