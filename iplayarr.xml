@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>iPlayarr</Name>
+  <Repository>nikorag/iplayarr:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <ReadMe/>
+  <Overview/>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:4404]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Nikorag/iplayarr/refs/heads/main/frontend/public/iplayarr.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1776412061</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Incoming" Target="/iplayarr/incoming" Default="" Mode="rw,slave" Description="Incoming TMP Location" Type="Path" Display="always" Required="false" Mask="false">/mnt/download/iPlayarr/incoming/</Config>
+  <Config Name="Completed" Target="/iplayarr/completed" Default="" Mode="rw,slave" Description="Completed Downloads" Type="Path" Display="always" Required="false" Mask="false">/mnt/download/iPlayarr/completed/</Config>
+  <Config Name="Config" Target="/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/iplayarr/config</Config>
+  <Config Name="Logs" Target="/logs" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/iplayarr/logs</Config>
+  <Config Name="Data" Target="/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/iplayarr/data</Config>
+  <Config Name="APIKey" Target="API_KEY" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">makeupakey</Config>
+  <Config Name="WebUI" Target="4404" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">4404</Config>
+  <Config Name="Completed Downloads" Target="COMPLETE_DIR" Default="/iplayarr/completed" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/iplayarr/completed</Config>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="1000" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="Download DIR" Target="DOWNLOAD_DIR" Default="/iplayarr/incoming" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/iplayarr/incoming</Config>
+  <TailscaleStateDir/>
+</Container>
