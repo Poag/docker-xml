@@ -13,7 +13,7 @@
   <Overview>When monitoring upcoming content, Sonarr and Radarr can search for and download releases before they're actually available, leading to fake pre-release files.</Overview>
   <Category/>
   <WebUI>http://[IP]:[PORT:5099]</WebUI>
-  <TemplateURL/>
+  <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/unmonitarr.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/unmonitarr/unmonitarr/main/assets/unmonitarr-logo.png</Icon>
   <ExtraParams/>
   <PostArgs/>
