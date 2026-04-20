@@ -10,7 +10,7 @@
   <Support>https://github.com/unmonitarr/unmonitarr/issues</Support>  
   <Project>https://github.com/unmonitarr/unmonitarr</Project>
   <ReadMe/>
-  <Overview>When monitoring upcoming content, Sonarr and Radarr can search for and download releases before they're actually available, leading to fake pre-release files.</Overview>
+  <Overview>When monitoring upcoming content, Sonarr can search for and download releases before they're actually available, leading to fake/wrong files. Unmonitarr only enables monitoring for an episode once it has aired. (This tool is not required for radarr)</Overview>
   <Category/>
   <WebUI>http://[IP]:[PORT:5099]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/unmonitarr.xml</TemplateURL>
