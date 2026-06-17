@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Fileflows-Forge</Name>
+  <Repository>revenz/fileflows-forge</Repository>
+  <Registry>https://hub.docker.com/r/revenz/fileflows/</Registry>
+  <Network>bridge</Network>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forum.fileflows.com</Support>
+  <Project>https://fileflows.com/</Project>
+  <Overview>Additinal processing forge node for FileFlows.  See http://fileflows.com for more information</Overview>
+  <Category>Productivity</Category>
+  <WebUI>http://[IP]:[PORT:19201]</WebUI>  
+  <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/fileflows-forge.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/revenz/FileFlowsUnraid/master/icon.png?raw=true</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <DonateLink>https://www.patreon.com/revenz</DonateLink>
+  <Config Name="Data" Target="/app/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/appdata/fileflows-forge</Config>
+  <Config Name="Connect" Target="19201" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">19201</Config>
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">Europe/London</Config>
+</Container>
