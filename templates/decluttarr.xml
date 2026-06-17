@@ -15,7 +15,7 @@
 Bittorrent keys will need to be added, check https://github.com/ManiMatter/decluttarr for more information.</Overview>
   <Category>Tools: Other:</Category> 
   <ExtraSearchTerms>Sonarr Radarr Lidarr Whisparr Download Cleanup</ExtraSearchTerms>
-  <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/decluttarr.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/templates/decluttarr.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/images/Decluttarr.png</Icon>
   <Requires/>
   <Config Name="TEST_RUN" Target="TEST_RUN" Default="True" Mode="" Description="Enable or Disable Test Run." Type="Variable" Display="always" Required="false" Mask="false">False</Config>
