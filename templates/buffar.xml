@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>buffarr</Name>
-    <Beta>true</Beta>
     <Category>Tools:</Category>
     <Repository>ghcr.io/poag/buffarr:main</Repository>
     <Registry>https://github.com/Poag/buffarr/pkgs/container/buffarr</Registry>
