@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Watchable</Name>
+  <Category>MediaApp:Other: Tools:</Category>
+  <Repository>ghcr.io/poag/watchable:latest</Repository>
+  <Registry>https://github.com/Poag/watchable/pkgs/container/watchable</Registry>
+  <Network>bridge</Network>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Poag/watchable/issues</Support>
+  <Project>https://github.com/Poag/watchable</Project>
+  <Overview>Syncs watch state (played/unplayed, in-progress position) between Plex, Jellyfin, and Emby through a local SQLite database -- nothing syncs server-to-server directly. Configured entirely from one YAML file: servers, per-person account mapping, and sync pairs that can be one-way or bidirectional with configurable conflict resolution. Also takes scheduled database backups with automatic retention.&#xD;
+&#xD;
+Beta: actively developed, config format and behaviour may still change between releases. Full setup docs at https://github.com/Poag/watchable.</Overview>
+  <Beta>true</Beta>
+  <WebUI></WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/templates/watchable.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Poag/watchable/main/icon/watchable-256.png</Icon>
+  <Date>2026-09-06</Date>
+  <Changes>### 0.1
+- Initial release.</Changes>
+  <Config Name="Config" Target="/config" Default="/mnt/user/appdata/watchable/config" Mode="rw" Description="Directory containing config.yaml -- mounted as a folder, not the file directly (Unraid's Docker UI doesn't handle single-file mappings well)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/watchable/config</Config>
+  <Config Name="Data" Target="/data" Default="/mnt/user/appdata/watchable/data" Mode="rw" Description="SQLite database (watch state, sync log) and scheduled backups live here." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/watchable/data</Config>
+  <Config Name="PLEX_TOKEN" Target="PLEX_TOKEN" Default="" Mode="" Description="Referenced by config.yaml as ${PLEX_TOKEN}. Plex scopes watch state to the token making the request, so add one extra variable per additional synced person (e.g. ALEX_PLEX_TOKEN) via this template's Add another Path, Port, Variable... button." Type="Variable" Display="always" Required="false" Mask="true"></Config>
+  <Config Name="JELLYFIN_API_KEY" Target="JELLYFIN_API_KEY" Default="" Mode="" Description="Referenced by config.yaml as ${JELLYFIN_API_KEY}." Type="Variable" Display="always" Required="false" Mask="true"></Config>
+  <Config Name="EMBY_API_KEY" Target="EMBY_API_KEY" Default="" Mode="" Description="Referenced by config.yaml as ${EMBY_API_KEY}." Type="Variable" Display="always" Required="false" Mask="true"></Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="The container starts as root and drops to the built-in watchable user remapped to this id before running anything -- match whoever owns the paths above (Unraid's default user is 99)." Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="See PUID (Unraid's default group is 100)." Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+  <Config Name="TZ" Target="TZ" Default="UTC" Mode="" Description="Timezone, e.g. Europe/London." Type="Variable" Display="advanced" Required="false" Mask="false">UTC</Config>
+</Container>
