@@ -12,13 +12,18 @@
     <WebUI></WebUI>
     <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/new/master/templates/buffarr.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/Poag/buffarr/main/assets/icon.png</Icon>
-    <Date>2026-08-16</Date>
-    <Changes>### 0.1
+    <Date>2026-09-12</Date>
+    <Changes>### 0.2
+- Added PUID/PGID support (default 99/100) -- the container now starts as root and drops privileges after fixing up /config ownership, so a non-default appdata owner no longer needs manual permission fixing.
+
+### 0.1
 - Initial release.</Changes>
 
     <Config Name="Port: Webhook / health" Target="5099" Default="5099" Mode="tcp" Description="Webhook trigger (/trigger/sonarr, /trigger/radarr) and health-check (/health) HTTP server." Type="Port" Display="always" Required="true" Mask="false">5099</Config>
     <Config Name="Path: /config" Target="/config" Default="/mnt/user/appdata/buffarr" Mode="rw" Description="conf/config.toml (optional, see config.example.toml) and logs/ (rotating buffarr.log) live here." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/buffarr</Config>
 
+    <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Uid the container runs as. Default 99 matches Unraid's nobody:users so /config is writable without manual permission fixing." Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Gid the container runs as. Default 100 matches Unraid's nobody:users so /config is writable without manual permission fixing." Type="Variable" Display="always" Required="false" Mask="false">100</Config>
     <Config Name="TZ" Target="TZ" Default="UTC" Mode="" Description="Timezone for date calculations, e.g. Europe/London." Type="Variable" Display="always" Required="false" Mask="false">UTC</Config>
     <Config Name="DRY_RUN" Target="DRY_RUN" Default="1" Mode="" Description="unmonitor: 1 = log actions only, 0 = apply them. Start at 1 to check the logs before going live." Type="Variable" Display="always" Required="false" Mask="false">1</Config>
 
