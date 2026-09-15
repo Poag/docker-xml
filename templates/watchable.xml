@@ -16,8 +16,11 @@ Beta: actively developed, config format and behaviour may still change between r
   <WebUI></WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/templates/watchable.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/Poag/watchable/main/icon/watchable-256.png</Icon>
-  <Date>2026-09-06</Date>
-  <Changes>### 0.1
+  <Date>2026-09-15</Date>
+  <Changes>### 0.2
+- Fixed `watchable run`'s scheduled loop exiting entirely when a sync pass hit an error (e.g. a media server temporarily unreachable) -- it now logs the failure and continues to the next scheduled cycle instead of stopping the container.
+
+### 0.1
 - Initial release.</Changes>
   <Config Name="Config" Target="/config" Default="/mnt/user/appdata/watchable/config" Mode="rw" Description="Directory containing config.yaml -- mounted as a folder, not the file directly (Unraid's Docker UI doesn't handle single-file mappings well)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/watchable/config</Config>
   <Config Name="Data" Target="/data" Default="/mnt/user/appdata/watchable/data" Mode="rw" Description="SQLite database (watch state, sync log) and scheduled backups live here." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/watchable/data</Config>
