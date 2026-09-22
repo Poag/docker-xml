@@ -18,4 +18,5 @@
   <Config Name="Data" Target="/app/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/appdata/fileflows-forge</Config>
   <Config Name="Connect" Target="19201" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">19201</Config>
   <Config Name="TZ" Target="TZ" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">Europe/London</Config>
+  <Config Name="ENABLE_CUDA" Target="ENABLE_CUDA" Default="0" Mode="" Description="Set to 1 to enable CUDA GPU hardware acceleration inside Forge. Requires NVIDIA drivers and the NVIDIA Container Toolkit on the host, see https://fileflows.com/docs/forge/nvidia" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
 </Container>
