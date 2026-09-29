@@ -9,15 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/ruspea/MeshDash/issues</Support>
   <Project>https://github.com/ruspea/MeshDash</Project>
-  <Overview>Self-hosted dashboard for Meshtastic mesh radio networks -- packet history, telemetry graphs, an interactive node map, and full messaging, built on 30+ plugins (ISS tracker, weather alerts, task scheduler, and more). GPL-3.0. Docs: https://meshdash.co.uk/docs/&#xD;
-&#xD;
-This image is a thin, self-updating runner: on every start it downloads and installs the latest MeshDash release from meshdash.co.uk and needs outbound internet access to do that -- it does not ship a pinned, offline copy of the app.&#xD;
-&#xD;
-Runs fully standalone by default, no meshdash.co.uk account needed: open the WebUI and complete the first-run wizard at /setup to connect your radio and create an admin login. Remote access / the optional cloud C2 setup service is opt-in only, off by default -- nothing beyond the version-check/download calls out to meshdash.co.uk unless you fill in the optional MD_SETUP_KEY variable below (see its description).&#xD;
-&#xD;
-This template assumes your radio is reached over TCP/Wi-Fi, configured from the /setup wizard -- verified against the runner's source (entrypoint.sh, connections/meshtastic.py) to need no special container privileges, so Privileged stays off and no /dev mapping is added. If you instead connect over USB/Serial, you must add `--privileged` and either `-v /dev:/dev` or a single `--device=/dev/ttyACM0`-style mapping yourself via this template's extra parameters -- neither is enabled here.&#xD;
-&#xD;
-Beta: young project (5 commits, no tagged releases as of writing) -- expect breaking changes between updates.</Overview>
+  <Overview>Self-hosted Meshtastic mesh radio dashboard (GPL-3.0, Beta) -- this runner re-downloads and installs the latest MeshDash on every start so it needs internet access, runs standalone with no account by default (finish setup at /setup), and only contacts meshdash.co.uk's optional remote-access service if you set MD_SETUP_KEY below (off by default); defaults assume a TCP/Wi-Fi radio, add --privileged and a /dev mapping yourself for USB/Serial.</Overview>
   <Beta>true</Beta>
   <WebUI>http://[IP]:[PORT:8000]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/templates/meshdash.xml</TemplateURL>
