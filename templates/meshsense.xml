@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/Poag/meshsense/issues</Support>
   <Project>https://github.com/Affirmatech/MeshSense</Project>
-  <Overview>Monitors, maps and graphs your area's Meshtastic network -- connected nodes, signal reports, trace routes and more -- from a web UI, by connecting to one of your Meshtastic nodes over WiFi/TCP. This is a headless build of Affirmatech's MeshSense (built daily from upstream source); Bluetooth and USB serial are not supported in the container. Set ADDRESS to your node's IP, or enter it in the UI after first boot.&#xD;
+  <Overview>Monitors, maps and graphs your area's Meshtastic network -- connected nodes, signal reports, trace routes and more -- from a web UI, by connecting to one of your Meshtastic nodes over WiFi/TCP. This is a headless build of Affirmatech's MeshSense (rebuilt monthly and on push from upstream source); Bluetooth and USB serial are not supported in the container. Set ADDRESS to your node's IP, or enter it in the UI after first boot.&#xD;
 &#xD;
 Beta: upstream is in beta and this image tracks upstream master.</Overview>
   <Beta>true</Beta>
