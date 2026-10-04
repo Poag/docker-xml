@@ -9,9 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/Poag/meshsense/issues</Support>
   <Project>https://github.com/Affirmatech/MeshSense</Project>
-  <Overview>Monitors, maps and graphs your area's Meshtastic network -- connected nodes, signal reports, trace routes and more -- from a web UI, by connecting to one of your Meshtastic nodes over WiFi/TCP. This is a headless build of Affirmatech's MeshSense (rebuilt monthly and on push from upstream source); Bluetooth and USB serial are not supported in the container. Set ADDRESS to your node's IP, or enter it in the UI after first boot.&#xD;
-&#xD;
-Beta: upstream is in beta and this image tracks upstream master.</Overview>
+  <Overview>Headless MeshSense: web UI that monitors and maps your Meshtastic network via a WiFi/TCP node.</Overview>
   <Beta>true</Beta>
   <WebUI>http://[IP]:[PORT:5920]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/templates/meshsense.xml</TemplateURL>
@@ -19,12 +17,12 @@ Beta: upstream is in beta and this image tracks upstream master.</Overview>
   <Date>2026-10-04</Date>
   <Changes>### 0.1
 - Initial release.</Changes>
-  <Config Name="Config" Target="/config" Default="/mnt/user/appdata/meshsense" Mode="rw" Description="Persistent MeshSense state (settings, last connection, logs), stored in a meshsense subfolder. Mounted as a folder, not a file mapping." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/meshsense</Config>
-  <Config Name="WebUI" Target="5920" Default="5920" Mode="tcp" Description="MeshSense web UI and API. If you change the host port only, the WebUI link follows it; to change the port MeshSense itself listens on, set PORT below and this mapping together." Type="Port" Display="always" Required="true" Mask="false">5920</Config>
-  <Config Name="ADDRESS" Target="ADDRESS" Default="" Mode="" Description="IP address or hostname of your Meshtastic node (WiFi/TCP). When set, MeshSense connects on startup. Leave blank to enter it in the UI." Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="ACCESS_KEY" Target="ACCESS_KEY" Default="" Mode="" Description="Optional access key (sent as a Bearer token) that grants full API permissions to remote clients. Note upstream already treats IPv4 clients (::ffff: addresses) as trusted, so this is not a login for the web UI -- keep the port off the internet." Type="Variable" Display="always" Required="false" Mask="true"></Config>
-  <Config Name="PORT" Target="PORT" Default="5920" Mode="" Description="Port MeshSense listens on inside the container. Change together with the WebUI port mapping." Type="Variable" Display="advanced" Required="false" Mask="false">5920</Config>
-  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="The container starts as root, chowns /config to this id and drops to it before running MeshSense -- match whoever owns the path above (Unraid's default user is 99)." Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
-  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="See PUID (Unraid's default group is 100)." Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+  <Config Name="Config" Target="/config" Default="/mnt/user/appdata/meshsense" Mode="rw" Description="Persistent MeshSense state." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/meshsense</Config>
+  <Config Name="WebUI" Target="5920" Default="5920" Mode="tcp" Description="Web UI port." Type="Port" Display="always" Required="true" Mask="false">5920</Config>
+  <Config Name="ADDRESS" Target="ADDRESS" Default="" Mode="" Description="IP or hostname of your Meshtastic node (WiFi/TCP)." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="ACCESS_KEY" Target="ACCESS_KEY" Default="" Mode="" Description="Optional API access key (not a web UI login)." Type="Variable" Display="always" Required="false" Mask="true"></Config>
+  <Config Name="PORT" Target="PORT" Default="5920" Mode="" Description="Listen port inside the container; match the WebUI mapping." Type="Variable" Display="advanced" Required="false" Mask="false">5920</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User ID that runs the app (Unraid default 99)." Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group ID that runs the app (Unraid default 100)." Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
   <Config Name="TZ" Target="TZ" Default="UTC" Mode="" Description="Timezone, e.g. Europe/London." Type="Variable" Display="advanced" Required="false" Mask="false">UTC</Config>
 </Container>
