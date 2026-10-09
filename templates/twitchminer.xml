@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>TwitchMiner</Name>
+  <Category>Tools: Other:</Category>
+  <Repository>ghcr.io/poag/twitchminer:latest</Repository>
+  <Registry>https://github.com/Poag/TwitchMiner/pkgs/container/twitchminer</Registry>
+  <Network>bridge</Network>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Poag/TwitchMiner/issues</Support>
+  <Project>https://github.com/Poag/TwitchMiner</Project>
+  <Overview>Watches Twitch streams for you to earn channel points, catch watch streaks, follow raids and claim drops (each drop once). Configured entirely through environment variables, with an optional analytics web page. BETA: the first login needs the container console (see the first-run note in the project README).</Overview>
+  <Beta>true</Beta>
+  <WebUI>http://[IP]:[PORT:5000]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/templates/twitchminer.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/images/twitchminer.png</Icon>
+  <ExtraParams>--user 99:100 --interactive --tty</ExtraParams>
+  <Date>2026-10-09</Date>
+  <Changes>### 1.0.0 (beta)
+- First TwitchMiner release.</Changes>
+  <Config Name="Data" Target="/data" Default="/mnt/user/appdata/twitchminer" Mode="rw" Description="Everything the miner writes: cookies, drops database, logs and analytics." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/twitchminer</Config>
+  <Config Name="Analytics port" Target="5000" Default="5000" Mode="tcp" Description="Analytics web page port (needs Enable analytics = true)." Type="Port" Display="always" Required="true" Mask="false">5000</Config>
+  <Config Name="Twitch username" Target="TCPM_USERNAME" Default="" Mode="" Description="Your Twitch username." Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Twitch password" Target="TCPM_PASSWORD" Default="" Mode="" Description="Only needed for the first login. Leave empty to be asked in the container console." Type="Variable" Display="always" Required="false" Mask="true"></Config>
+  <Config Name="Streamers" Target="TCPM_STREAMERS" Default="" Mode="" Description="Comma separated streamers in priority order. Per-streamer overrides: name:follow_raid=false+chat=never" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Mine followed channels" Target="TCPM_FOLLOWERS" Default="false" Mode="" Description="Also mine every channel you follow on Twitch (after the streamers above)." Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="Enable analytics" Target="TCPM_ENABLE_ANALYTICS" Default="true" Mode="" Description="Serve the analytics web page. Set to false to save memory and disk." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="Analytics host" Target="TCPM_ANALYTICS_HOST" Default="0.0.0.0" Mode="" Description="Bind address of the analytics page inside the container; keep 0.0.0.0." Type="Variable" Display="advanced" Required="false" Mask="false">0.0.0.0</Config>
+  <Config Name="Data directory" Target="TCPM_DATA_DIR" Default="/data" Mode="" Description="Folder inside the container for all data; must match the Data path target." Type="Variable" Display="advanced" Required="false" Mask="false">/data</Config>
+  <Config Name="Priority" Target="TCPM_PRIORITY" Default="STREAK,DROPS,ORDER" Mode="" Description="STREAK, DROPS, SUBSCRIBED, ORDER, POINTS_ASCENDING, POINTS_DESCENDING (comma separated)." Type="Variable" Display="advanced" Required="false" Mask="false">STREAK,DROPS,ORDER</Config>
+  <Config Name="Claim drops on startup" Target="TCPM_CLAIM_DROPS_STARTUP" Default="false" Mode="" Description="Claim all drops from the Twitch inventory when starting." Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <Config Name="Blacklist" Target="TCPM_BLACKLIST" Default="" Mode="" Description="Comma separated streamers to skip (useful with Mine followed channels)." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Follow raids" Target="TCPM_FOLLOW_RAID" Default="true" Mode="" Description="Follow raids for bonus points." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="Claim drops" Target="TCPM_CLAIM_DROPS" Default="true" Mode="" Description="Watch the current game so drops can be claimed." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="Watch streak" Target="TCPM_WATCH_STREAK" Default="true" Mode="" Description="Prioritise streamers that just went online to catch the watch streak." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="Chat presence" Target="TCPM_CHAT" Default="ONLINE" Mode="" Description="IRC chat presence: ALWAYS, NEVER, ONLINE or OFFLINE." Type="Variable" Display="advanced" Required="false" Mask="false">ONLINE</Config>
+  <Config Name="Console log level" Target="TCPM_LOG_CONSOLE_LEVEL" Default="INFO" Mode="" Description="DEBUG, INFO, WARNING or ERROR." Type="Variable" Display="advanced" Required="false" Mask="false">INFO</Config>
+  <Config Name="Log time zone" Target="TCPM_TIME_ZONE" Default="" Mode="" Description="tz database name for log timestamps, e.g. Europe/London." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Discord webhook" Target="TCPM_DISCORD_WEBHOOK_API" Default="" Mode="" Description="Optional Discord webhook URL for notifications." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="Discord events" Target="TCPM_DISCORD_EVENTS" Default="STREAMER_ONLINE,STREAMER_OFFLINE,CHAT_MENTION,DROP_CLAIM" Mode="" Description="Events sent to Discord (comma separated)." Type="Variable" Display="advanced" Required="false" Mask="false">STREAMER_ONLINE,STREAMER_OFFLINE,CHAT_MENTION,DROP_CLAIM</Config>
+  <Config Name="Telegram chat ID" Target="TCPM_TELEGRAM_CHAT_ID" Default="" Mode="" Description="Optional Telegram notifications: chat ID (also set the token)." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Telegram token" Target="TCPM_TELEGRAM_TOKEN" Default="" Mode="" Description="Telegram bot token." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="TZ" Target="TZ" Default="UTC" Mode="" Description="Container time zone, e.g. Europe/London." Type="Variable" Display="advanced" Required="false" Mask="false">UTC</Config>
+</Container>
