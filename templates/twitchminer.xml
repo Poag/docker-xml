@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/Poag/TwitchMiner/issues</Support>
   <Project>https://github.com/Poag/TwitchMiner</Project>
-  <Overview>Watches Twitch streams for you to earn channel points, catch watch streaks, follow raids and claim moments and drops (each drop once). Configured entirely through environment variables, with an optional analytics web page. BETA: the first login needs the container console (see the first-run note in the project README).</Overview>
+  <Overview>Watches Twitch streams for you to earn channel points, catch watch streaks, follow raids and claim drops (each drop once). Configured entirely through environment variables, with an optional analytics web page. BETA: the first login needs the container console (see the first-run note in the project README).</Overview>
   <Beta>true</Beta>
   <WebUI>http://[IP]:[PORT:5000]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/templates/twitchminer.xml</TemplateURL>
@@ -32,7 +32,6 @@
   <Config Name="Blacklist" Target="TCPM_BLACKLIST" Default="" Mode="" Description="Comma separated streamers to skip (useful with Mine followed channels)." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
   <Config Name="Follow raids" Target="TCPM_FOLLOW_RAID" Default="true" Mode="" Description="Follow raids for bonus points." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
   <Config Name="Claim drops" Target="TCPM_CLAIM_DROPS" Default="true" Mode="" Description="Watch the current game so drops can be claimed." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
-  <Config Name="Claim moments" Target="TCPM_CLAIM_MOMENTS" Default="true" Mode="" Description="Claim moments when available." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
   <Config Name="Watch streak" Target="TCPM_WATCH_STREAK" Default="true" Mode="" Description="Prioritise streamers that just went online to catch the watch streak." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
   <Config Name="Chat presence" Target="TCPM_CHAT" Default="ONLINE" Mode="" Description="IRC chat presence: ALWAYS, NEVER, ONLINE or OFFLINE." Type="Variable" Display="advanced" Required="false" Mask="false">ONLINE</Config>
   <Config Name="Console log level" Target="TCPM_LOG_CONSOLE_LEVEL" Default="INFO" Mode="" Description="DEBUG, INFO, WARNING or ERROR." Type="Variable" Display="advanced" Required="false" Mask="false">INFO</Config>
