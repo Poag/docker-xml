@@ -10,7 +10,6 @@
   <Support>https://github.com/Poag/meshsense/issues</Support>
   <Project>https://github.com/Affirmatech/MeshSense</Project>
   <Overview>Headless MeshSense: web UI that monitors and maps your Meshtastic network via a WiFi/TCP node.</Overview>
-  <Beta>true</Beta>
   <WebUI>http://[IP]:[PORT:5920]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/templates/meshsense.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/images/meshsense.png</Icon>
