@@ -1,32 +1,24 @@
-# Community Apps Starter Template
+# docker-xml
 
-Use this repository as a GitHub template when you want a clean starting point for a new Community Apps submission repository.
+Poag's Unraid Community Applications template repository. Each app has one XML file under `templates/`, referenced by Unraid via its raw GitHub URL on the `main` branch, and picked up automatically by Community Applications' periodic feed scan.
 
-## Quick Start
+## Apps
 
-1. Click **Use this template** on GitHub and create your own repository.
-2. Replace the placeholder values in `ca_profile.xml`, `templates/example-app.xml`, and `plugins/example-plugin.xml`.
-3. Replace `icon.svg` with your own repository icon, or update `ca_profile.xml` to point at a hosted icon you control.
-4. Keep one XML file per Docker app under `templates/`.
-5. Keep one XML wrapper per plugin under `plugins/`.
-6. Delete the example files you do not need.
-7. Commit and push your repository.
-8. Run **Validate** and **Scan** in the Community Apps submit flow: `/submit`.
+| App | What it does | Source |
+|---|---|---|
+| [buffarr](templates/buffar.xml) | Two media-automation tools in one container: **prefetch** grabs upcoming episodes of a show you're watching on Jellyfin/Emby/Plex/Tautulli before you catch up to them; **unmonitor** stops Sonarr/Radarr grabbing fake or low-quality pre-release files by holding monitoring until the real air/release date (plus a configurable delay). | [Poag/buffarr](https://github.com/Poag/buffarr) -- image `ghcr.io/poag/buffarr:main` |
+| [Decluttarr](templates/decluttarr.xml) | Cleans up stuck, failed, and orphaned downloads across Sonarr, Radarr, Lidarr, Readarr, and Whisparr. | [ManiMatter/decluttarr](https://github.com/ManiMatter/decluttarr) -- image `ghcr.io/manimatter/decluttarr:latest` |
+| [Fileflows-Forge](templates/fileflows-forge.xml) | Additional processing node for a FileFlows server, adding remote encode/transcode capacity; supports optional NVIDIA/CUDA GPU acceleration via `ENABLE_CUDA`. | [FileFlows](https://fileflows.com/) -- image `revenz/fileflows-forge` |
+| [iPlayarr](templates/iplayarr.xml) | Indexer and download client for Sonarr/Radarr that wraps `get_iplayer`, so BBC iPlayer content can be searched and grabbed like any other release. | [Nikorag/iplayarr](https://github.com/Nikorag/iplayarr) -- image `nikorag/iplayarr:latest` |
+| [MeshDash](templates/meshdash.xml) | Self-hosted Meshtastic mesh radio dashboard: packet history, telemetry graphs, node map, messaging. Self-updating runner image that re-downloads the app on every start. Beta. | [ruspea/MeshDash](https://github.com/ruspea/MeshDash) -- image `rusjpmd/meshdash-runner:latest` |
+| [MeshSense](templates/meshsense.xml) | Headless web UI that monitors and maps a Meshtastic network over a WiFi/TCP node. | [Affirmatech/MeshSense](https://github.com/Affirmatech/MeshSense) -- image `ghcr.io/poag/meshsense:latest` |
+| [TwitchMiner](templates/twitchminer.xml) | Watches Twitch streams on your behalf to farm channel points, catch watch streaks, follow raids, and claim drops. Beta -- first login needs the container console. | [Poag/TwitchMiner](https://github.com/Poag/TwitchMiner) -- image `ghcr.io/poag/twitchminer:latest` |
+| [unmonitarr](templates/unmonitarr.xml) | Holds Sonarr monitoring off an episode until it has actually aired, preventing fake or wrong pre-release grabs. | [unmonitarr/unmonitarr](https://github.com/unmonitarr/unmonitarr) -- image `ghcr.io/unmonitarr/unmonitarr:latest` |
+| [Watchable](templates/watchable.xml) | Syncs watch state (played/unplayed, in-progress position) between Plex, Jellyfin, and Emby through a local database -- nothing syncs server-to-server directly. YAML-configured. Beta. | [Poag/watchable](https://github.com/Poag/watchable) -- image `ghcr.io/poag/watchable:latest` |
 
-## Starter Files
+## Repository layout
 
-- `README.md`: onboarding notes for whoever maintains the repository.
-- `LICENSE`: starter MIT license text. Replace the placeholder copyright line.
-- `.gitignore`: keeps common OS junk out of the repo.
-- `icon.svg`: starter repository icon referenced by `ca_profile.xml`.
-- `ca_profile.xml`: repository overview and support metadata shown in Community Apps.
-- `templates/example-app.xml`: starter Docker application template.
-- `plugins/example-plugin.xml`: starter plugin wrapper.
-
-## Submission Notes
-
-- Keep `ca_profile.xml` in the repository root.
-- Every Docker app entry needs a `<Repository>` tag.
-- Every plugin entry needs a `<PluginURL>` tag.
-- Keep each template's `TemplateURL` pointed at the raw GitHub URL for that exact XML file.
-- Use an OSI-approved license before submitting.
+- `templates/<name>.xml` -- one Unraid CA template per app.
+- `images/` -- icons for templates that host their own icon locally rather than pointing at the upstream project's repo.
+- `ca_profile.xml` -- repository-level metadata (profile name, icon) shown in Community Applications; not per-app.
+- `.unraid/community-apps-claim.json` -- the CA repository ownership claim for this repo.
