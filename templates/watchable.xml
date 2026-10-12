@@ -14,7 +14,7 @@
 Beta: actively developed, config format and behaviour may still change between releases. Full setup docs at https://github.com/Poag/watchable.</Overview>
   <Beta>true</Beta>
   <WebUI></WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/master/templates/watchable.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/main/templates/watchable.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/Poag/watchable/main/icon/watchable-256.png</Icon>
   <Date>2026-09-15</Date>
   <Changes>### 0.2
