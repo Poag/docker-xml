@@ -9,8 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/Poag/TwitchMiner/issues</Support>
   <Project>https://github.com/Poag/TwitchMiner</Project>
-  <Overview>Watches Twitch streams for you to earn channel points, catch watch streaks, follow raids and claim drops (each drop once). Configured entirely through environment variables, with an optional analytics web page. BETA: the first login needs the container console (see the first-run note in the project README).</Overview>
-  <Beta>true</Beta>
+  <Overview>Watches Twitch streams for you to earn channel points, catch watch streaks, follow raids and claim drops (each drop once). Configured entirely through environment variables, with an optional analytics web page. The first login needs the container console (see the first-run note in the project README).</Overview>
   <WebUI>http://[IP]:[PORT:5000]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/main/templates/twitchminer.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/main/images/twitchminer.png</Icon>
