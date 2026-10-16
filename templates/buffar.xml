@@ -12,8 +12,11 @@
     <WebUI></WebUI>
     <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/main/templates/buffar.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/Poag/buffarr/main/assets/icon.png</Icon>
-    <Date>2026-09-12</Date>
-    <Changes>### 0.2
+    <Date>2026-10-16</Date>
+    <Changes>### 0.3
+- Added support for Sonarr v5. The container now auto-detects whether the connected Sonarr instance is v3 or v5 (via its reported system status) and talks to the matching API path automatically -- no config change needed. Confirmed working against a live v4-to-v5 upgrade.
+
+### 0.2
 - Added PUID/PGID support (default 99/100) -- the container now starts as root and drops privileges after fixing up /config ownership, so a non-default appdata owner no longer needs manual permission fixing.
 
 ### 0.1
