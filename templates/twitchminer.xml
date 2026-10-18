@@ -14,8 +14,18 @@
   <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/main/templates/twitchminer.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/main/images/twitchminer.png</Icon>
   <ExtraParams>--user 99:100 --interactive --tty</ExtraParams>
-  <Date>2026-10-09</Date>
-  <Changes>### 1.0.0 (beta)
+  <Date>2026-10-18</Date>
+  <Changes>### After 1.1.0 (latest image)
+- Drops hunt: look for a live channel with drops when nobody on your list is playing a prioritised game (off by default, see Drops hunt).
+- Fixed games for ended campaigns showing as offered, and the drops sync could stop silently after a failed request.
+
+### 1.1.0
+- Prioritise games for drops: tick games on the analytics page, or set Priority games.
+- Analytics page: drops table, live log panel, green border on the streamers being watched.
+- Fixed Mine followed channels ignoring its order setting, and failures loading the follow list are now logged.
+- Docker is the only supported way to run; the Moments option is gone (retired by Twitch).
+
+### 1.0.0 (beta)
 - First TwitchMiner release.</Changes>
   <Config Name="Data" Target="/data" Default="/mnt/user/appdata/twitchminer" Mode="rw" Description="Everything the miner writes: cookies, drops database, logs and analytics." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/twitchminer</Config>
   <Config Name="Analytics port" Target="5000" Default="5000" Mode="tcp" Description="Analytics web page port (needs Enable analytics = true)." Type="Port" Display="always" Required="true" Mask="false">5000</Config>
@@ -27,6 +37,9 @@
   <Config Name="Analytics host" Target="TCPM_ANALYTICS_HOST" Default="0.0.0.0" Mode="" Description="Bind address of the analytics page inside the container; keep 0.0.0.0." Type="Variable" Display="advanced" Required="false" Mask="false">0.0.0.0</Config>
   <Config Name="Data directory" Target="TCPM_DATA_DIR" Default="/data" Mode="" Description="Folder inside the container for all data; must match the Data path target." Type="Variable" Display="advanced" Required="false" Mask="false">/data</Config>
   <Config Name="Priority" Target="TCPM_PRIORITY" Default="STREAK,DROPS,ORDER" Mode="" Description="STREAK, DROPS, SUBSCRIBED, ORDER, POINTS_ASCENDING, POINTS_DESCENDING (comma separated)." Type="Variable" Display="advanced" Required="false" Mask="false">STREAK,DROPS,ORDER</Config>
+  <Config Name="Priority games" Target="TCPM_PRIORITY_GAMES" Default="" Mode="" Description="Comma separated game names to watch first for drops, e.g. Elim,Rust (more can be ticked on the analytics page). Needs DROPS in Priority." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Drops hunt" Target="TCPM_HUNT_STREAMERS" Default="false" Mode="" Description="When a prioritised game has drops and none of your streamers is playing it, look for a live channel with drops enabled and watch it too. Needs Priority games (or games ticked on the analytics page) and DROPS in Priority." Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <Config Name="Drops hunt max channels" Target="TCPM_HUNT_MAX_STREAMERS" Default="2" Mode="" Description="At most this many hunted channels at a time. One that goes offline is replaced by the next one found." Type="Variable" Display="advanced" Required="false" Mask="false">2</Config>
   <Config Name="Claim drops on startup" Target="TCPM_CLAIM_DROPS_STARTUP" Default="false" Mode="" Description="Claim all drops from the Twitch inventory when starting." Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
   <Config Name="Blacklist" Target="TCPM_BLACKLIST" Default="" Mode="" Description="Comma separated streamers to skip (useful with Mine followed channels)." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
   <Config Name="Follow raids" Target="TCPM_FOLLOW_RAID" Default="true" Mode="" Description="Follow raids for bonus points." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
