@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>seerrcompanion</Name>
+  <Category>Tools:</Category>
+  <Repository>ghcr.io/poag/seerrcompanion:latest</Repository>
+  <Registry>https://github.com/Poag/seerrcompanion/pkgs/container/seerrcompanion</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Beta>true</Beta>
+  <Support>https://github.com/Poag/seerrcompanion/issues</Support>
+  <Project>https://github.com/Poag/seerrcompanion</Project>
+  <Overview>Seerr companion: trims multi-season requests to the first season and marks unwatched series for deletion, with a web UI to approve or keep.</Overview>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <ExtraParams>--user 99:100</ExtraParams>
+  <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/main/templates/seerrcompanion.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Poag/seerrcompanion/main/assets/icon.png</Icon>
+  <Date>2026-10-20</Date>
+  <Changes>### 0.1
+- Initial release.</Changes>
+  <Config Name="Config" Target="/config" Default="/mnt/user/appdata/seerrcompanion" Mode="rw" Description="Holds the state database and web UI secret." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/seerrcompanion</Config>
+  <Config Name="WebUI" Target="8080" Default="8080" Mode="tcp" Description="Web UI port." Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="SEERR_URL" Target="SEERR_URL" Default="" Mode="" Description="Seerr base URL, e.g. http://10.0.0.2:5055." Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="SEERR_API_KEY" Target="SEERR_API_KEY" Default="" Mode="" Description="Seerr admin API key (Settings -&gt; General)." Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="WEBUI_USERNAME" Target="WEBUI_USERNAME" Default="" Mode="" Description="Web UI login username; the UI is off unless this and the password are set." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="WEBUI_PASSWORD" Target="WEBUI_PASSWORD" Default="" Mode="" Description="Web UI login password." Type="Variable" Display="always" Required="false" Mask="true"></Config>
+  <Config Name="DRY_RUN" Target="DRY_RUN" Default="true" Mode="" Description="true = log only, change and delete nothing; set false to go live." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="TAUTULLI_URL" Target="TAUTULLI_URL" Default="" Mode="" Description="Tautulli base URL for watch state; blank uses Seerr's own watch data." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="TAUTULLI_API_KEY" Target="TAUTULLI_API_KEY" Default="" Mode="" Description="Tautulli API key." Type="Variable" Display="always" Required="false" Mask="true"></Config>
+  <Config Name="APPRISE_URLS" Target="APPRISE_URLS" Default="" Mode="" Description="Comma-separated Apprise notification URLs; blank logs only." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="WEBUI_URL" Target="WEBUI_URL" Default="" Mode="" Description="Public URL of this web UI, added to notifications as a review link." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="SEERR_PUBLIC_URL" Target="SEERR_PUBLIC_URL" Default="" Mode="" Description="Seerr URL for title links in the UI, if SEERR_URL is internal." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="TRIM_SEASONS" Target="TRIM_SEASONS" Default="true" Mode="" Description="Trim pending multi-season TV requests to the first season." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="APPROVE_AFTER_TRIM" Target="APPROVE_AFTER_TRIM" Default="true" Mode="" Description="Approve a request after trimming it." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="FLAG_UNWATCHED" Target="FLAG_UNWATCHED" Default="true" Mode="" Description="Mark a user's unwatched series for deletion when they request another title." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="PURGE_AFTER_DAYS" Target="PURGE_AFTER_DAYS" Default="" Mode="" Description="Auto-delete flagged titles after this many days; blank never auto-deletes." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="IGNORE_USER_IDS" Target="IGNORE_USER_IDS" Default="" Mode="" Description="Comma-separated Seerr user IDs to skip." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="POLL_INTERVAL" Target="POLL_INTERVAL" Default="60" Mode="" Description="Seconds between Seerr polls." Type="Variable" Display="advanced" Required="false" Mask="false">60</Config>
+  <Config Name="LOG_LEVEL" Target="LOG_LEVEL" Default="INFO" Mode="" Description="DEBUG, INFO, WARNING or ERROR." Type="Variable" Display="advanced" Required="false" Mask="false">INFO</Config>
+  <Config Name="TZ" Target="TZ" Default="UTC" Mode="" Description="Timezone, e.g. Europe/London." Type="Variable" Display="advanced" Required="false" Mask="false">UTC</Config>
+</Container>
