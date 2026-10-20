@@ -13,7 +13,7 @@
   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
   <ExtraParams>--user 99:100</ExtraParams>
   <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/main/templates/seerrcompanion.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/Poag/seerrcompanion/main/assets/icon.png</Icon>
+  <Icon>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/main/images/seerrcompanion.png</Icon>
   <Date>2026-10-20</Date>
   <Changes>### 0.1
 - Initial release.</Changes>

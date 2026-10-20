@@ -14,7 +14,7 @@
 Full setup docs at https://github.com/Poag/watchable.</Overview>
   <WebUI></WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/main/templates/watchable.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/Poag/watchable/main/icon/watchable-256.png</Icon>
+  <Icon>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/main/images/watchable.png</Icon>
   <Date>2026-09-15</Date>
   <Changes>### 0.2
 - Fixed `watchable run`'s scheduled loop exiting entirely when a sync pass hit an error (e.g. a media server temporarily unreachable) -- it now logs the failure and continues to the next scheduled cycle instead of stopping the container.

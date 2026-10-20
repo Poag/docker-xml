@@ -11,7 +11,7 @@
     <Overview>buffarr runs two self-hosted media-automation tools in a single container: prefetch watches what's playing on Jellyfin, Emby, Plex, or Tautulli and tells Sonarr to grab the next episodes of a show before you catch up to them, so you never hit a gap mid-binge; unmonitor protects Sonarr/Radarr from grabbing fake or low-quality pre-release files by unmonitoring content until its actual air/release date (plus a configurable delay) has passed, then automatically re-monitoring it so normal grabbing resumes.</Overview>
     <WebUI></WebUI>
     <TemplateURL>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/main/templates/buffar.xml</TemplateURL>
-    <Icon>https://raw.githubusercontent.com/Poag/buffarr/main/assets/icon.png</Icon>
+    <Icon>https://raw.githubusercontent.com/Poag/docker-xml/refs/heads/main/images/buffarr.png</Icon>
     <Date>2026-10-16</Date>
     <Changes>### 0.3
 - Added support for Sonarr v5. The container now auto-detects whether the connected Sonarr instance is v3 or v5 (via its reported system status) and talks to the matching API path automatically -- no config change needed. Confirmed working against a live v4-to-v5 upgrade.
